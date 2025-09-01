@@ -12,6 +12,7 @@ function ModalCadastro({ isOpen, onClose }) {
     telefone: '',
     senha: '',
     tipo: '',
+<<<<<<< HEAD
     area: '' // <- Nova propriedade adicionada
   });
 
@@ -20,6 +21,18 @@ function ModalCadastro({ isOpen, onClose }) {
   const handleChange = (e) => {
     const { name, value, type } = e.target;
     setForm({ ...form, [name]: type === 'radio' ? value : value });
+=======
+    area: ''
+  });
+
+  const [isSelectOpen, setIsSelectOpen] = useState(false); // controle da seta
+
+  if (!isOpen) return null;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+>>>>>>> 05d32d7 (login alteração)
   };
 
   const handleSubmit = () => {
@@ -43,7 +56,11 @@ function ModalCadastro({ isOpen, onClose }) {
       React.createElement('div', { className: 'linha-vermelha' }),
       React.createElement('h2', { className: 'titulo-principal' }, 'Cadastro'),
 
+<<<<<<< HEAD
       // Campo E-mail
+=======
+      // Email
+>>>>>>> 05d32d7 (login alteração)
       React.createElement('div', { className: 'input-icon-container' }, [
         React.createElement('img', { src: boneco, alt: 'Ícone usuário' }),
         React.createElement('input', {
@@ -55,7 +72,11 @@ function ModalCadastro({ isOpen, onClose }) {
         })
       ]),
 
+<<<<<<< HEAD
       // Campo Nome
+=======
+      // Nome
+>>>>>>> 05d32d7 (login alteração)
       React.createElement('div', { className: 'input-icon-container' }, [
         React.createElement('img', { src: boneco, alt: 'Ícone usuário' }),
         React.createElement('input', {
@@ -67,7 +88,11 @@ function ModalCadastro({ isOpen, onClose }) {
         })
       ]),
 
+<<<<<<< HEAD
       // Campo CPF
+=======
+      // CPF
+>>>>>>> 05d32d7 (login alteração)
       React.createElement('div', { className: 'input-icon-container' }, [
         React.createElement('img', { src: boneco, alt: 'Ícone usuário' }),
         React.createElement('input', {
@@ -79,7 +104,11 @@ function ModalCadastro({ isOpen, onClose }) {
         })
       ]),
 
+<<<<<<< HEAD
       // Campo Telefone
+=======
+      // Telefone
+>>>>>>> 05d32d7 (login alteração)
       React.createElement('div', { className: 'input-icon-container' }, [
         React.createElement('img', { src: boneco, alt: 'Ícone usuário' }),
         React.createElement('input', {
@@ -91,7 +120,11 @@ function ModalCadastro({ isOpen, onClose }) {
         })
       ]),
 
+<<<<<<< HEAD
       // Campo Senha
+=======
+      // Senha
+>>>>>>> 05d32d7 (login alteração)
       React.createElement('div', { className: 'input-icon-container' }, [
         React.createElement('img', { src: cadeado, alt: 'Ícone senha' }),
         React.createElement('input', {
@@ -103,6 +136,28 @@ function ModalCadastro({ isOpen, onClose }) {
         })
       ]),
 
+<<<<<<< HEAD
+=======
+      // Área de Atuação (com select)
+      React.createElement('div', {
+        className: isSelectOpen ? 'select-wrapper open' : 'select-wrapper'
+      }, [
+        React.createElement('select', {
+          name: 'area',
+          value: form.area,
+          onChange: handleChange,
+          className: 'select-area',
+          onFocus: () => setIsSelectOpen(true),
+          onBlur: () => setIsSelectOpen(false),
+          required: true
+        }, [
+          React.createElement('option', { value: '', disabled: true }, 'Área de Atuação'),
+          React.createElement('option', { value: 'Informática' }, 'Informática'),
+          React.createElement('option', { value: 'Mecânica' }, 'Mecânica')
+        ])
+      ]),
+
+>>>>>>> 05d32d7 (login alteração)
       // Tipo de Usuário
       React.createElement('p', { className: 'user-type-label' }, 'Tipo de Usuário:'),
       React.createElement('div', { className: 'user-type' }, [
@@ -120,6 +175,7 @@ function ModalCadastro({ isOpen, onClose }) {
         )
       ]),
 
+<<<<<<< HEAD
       // Área de Atuação
       React.createElement('p', { className: 'user-type-label' }, 'Área de Atuação:'),
       React.createElement('div', { className: 'user-type' }, [
@@ -138,9 +194,16 @@ function ModalCadastro({ isOpen, onClose }) {
       ]),
 
       // Botão de Enviar
+=======
+      // Botão
+>>>>>>> 05d32d7 (login alteração)
       React.createElement('button', { className: 'submit-btn', onClick: handleSubmit }, 'Cadastrar')
     ])
   );
 }
 
+<<<<<<< HEAD
 export default ModalCadastro;
+=======
+export default ModalCadastro;
+>>>>>>> 05d32d7 (login alteração)

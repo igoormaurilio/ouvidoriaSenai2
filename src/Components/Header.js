@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './Header.css';
+<<<<<<< HEAD
+=======
+import { useNavigate } from 'react-router-dom'; // ✅ Importa useNavigate
+>>>>>>> 05d32d7 (login alteração)
 import logoSenai from '../assets/imagens/logosenai.png';
 import iconeUsuario from '../assets/imagens/boneco.png';
 
@@ -8,15 +12,37 @@ import ModalCadastro from './ModalCadastro';
 import ModalSenha from './ModalSenha';
 
 function Header() {
+<<<<<<< HEAD
+=======
+  const navigate = useNavigate(); // ✅ Hook de navegação
+>>>>>>> 05d32d7 (login alteração)
   const [modalAberto, setModalAberto] = useState(''); // 'login', 'cadastro', 'senha', ''
 
   const menuItems = [
     { texto: 'O SENAI', ativo: true, link: 'https://www.sp.senai.br/' },
+<<<<<<< HEAD
     { texto: 'Manifestação Anônima' },
     { texto: 'Transparência', link: 'https://transparencia.sp.senai.br/' },
     { texto: 'Contato com a Ouvidoria', link: 'https://wa.me/551156423407' },
   ];
 
+=======
+    { texto: 'Transparência', link: 'https://transparencia.sp.senai.br/' },
+    { texto: 'Contato com a Ouvidoria' }
+  ];
+
+  // ✅ Lógica do botão SOU ALUNO
+  function handleAlunoClick() {
+    const usuarioLogado = localStorage.getItem('usuarioLogado');
+
+    if (usuarioLogado) {
+      navigate('/Admin'); // Já logado → vai direto para /usuario
+    } else {
+      setModalAberto('login'); // Não logado → abre modal de login
+    }
+  }
+
+>>>>>>> 05d32d7 (login alteração)
   return (
     <>
       <header className="header">
@@ -38,7 +64,11 @@ function Header() {
         <button
           className="usuario"
           type="button"
+<<<<<<< HEAD
           onClick={() => setModalAberto('login')}
+=======
+          onClick={handleAlunoClick} // ✅ Agora verifica se está logado
+>>>>>>> 05d32d7 (login alteração)
         >
           <div className="divisor" />
           <img src={iconeUsuario} alt="Usuário" className="icone-usuario" />
@@ -72,4 +102,8 @@ function Header() {
   );
 }
 
+<<<<<<< HEAD
 export default Header;
+=======
+export default Header;
+>>>>>>> 05d32d7 (login alteração)
